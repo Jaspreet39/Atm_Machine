@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div style="display: flex; align-items: center">
+        <p
+          style="
+            background-color: red;
+            height: 25px;
+            width: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+          "
+        >
+          1
+        </p>
+        <div
+          id="firstFlow"
+          style="
+            width: 200px;
+            height: 8px;
+            background-color: rgba(0, 0, 0, 0.1);
+          "
+        ></div>
+        <p
+          id="second"
+          style="
+            background-color: rgba(0, 0, 0, 0.1);
+            height: 25px;
+            width: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+          "
+        >
+          2
+        </p>
+      </div>
+      <div
+        style="
+          background-color: #2d2d2d;
+          min-width: 450px;
+          max-width: 100%;
+          padding: 0 20px;
+          border-radius: 10px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <img
+            src="./download-removebg-preview.png"
+            alt=""
+            height="80px"
+            width="80px"
+          />
+          <div>
+            <img
+              src="./credit-card-debit-card-payment-card-bank-visa-thumbnail-removebg-preview.png"
+              alt=""
+              height="70px"
+              width="70px"
+            />
+          </div>
+        </div>
+        <h3 id="CARD_NUMBER" style="color: rgba(249, 249, 249, 249)">
+          #############
+        </h3>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <div>
+            <p style="color: rgba(249, 249, 249, 249)">CARD HOLDER</p>
+            <p id="FULL_NAME" style="color: rgba(249, 249, 249, 249)">
+              FULL NAME
+            </p>
+          </div>
+          <div>
+            <p style="color: rgba(249, 249, 249, 249)">EXPRESS</p>
+            <p style="color: rgba(249, 249, 249, 249)">MM/YY</p>
+          </div>
+        </div>
+      </div>
+      <div
+        id="firstStep"
+        style="
+          box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.3);
+          min-width: 700px;
+          max-width: 100%;
+          padding: 10px 20px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        "
+      >
+        <div style="width: 100%">
+          <h3 style="text-align: center;">INSERT CARD</h3>
+          <p>ENTER CARD NUMBER</p>
+          <input
+            style="
+              width: 100%;
+              box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.3);
+              padding: 15px 5px;
+              border-radius: 10px;
+              outline-width: 0px;
+              border: none;
+            "
+            type="number"
+            name=""
+            id="CARDNUMBER"
+            placeholder="CARD NUMBER"
+          />
+        </div>
+        <div style="width: 100%">
+          <p>ENTER CARD PIN</p>
+          <input
+            style="
+              width: 100%;
+              box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.3);
+              padding: 15px 5px;
+              border-radius: 10px;
+              outline-width: 0px;
+              border: none;
+            "
+            type="text"
+            maxlength="4"
+            size="4"
+            name=""
+            id="CARD_PIN"
+            placeholder="PIN"
+          />
+        </div>
+        <button
+          class="button"
+          id="card-form-btn"
+          style="
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #2d2d2d;
+            margin: 20px 0;
+            min-width: 200px;
+            border: none;
+            border-radius: 10px;
+            color: rgba(249, 249, 249, 249);
+          "
+        >
+          SUBMIT
+        </button>
+      </div>
+
+      <!-- second step -->
+      <div
+        id="secondStep"
+        style="
+          box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.3);
+          min-width: 700px;
+          max-width: 100%;
+          padding: 10px 20px;
+          border-radius: 10px;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        "
+      >
+        <div style="width: 100%">
+          <p>Choose option</p>
+          <select style="
+              width: 100%;
+              box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.3);
+              padding: 15px 5px;
+              border-radius: 10px;
+              outline-width: 0px;
+              border: none;
+            " name="option" id="option">
+            <option value="Saving">Saving</option>
+            <option value="Checking">Checking</option>
+          </select>
+        </div>
+        <div style="width: 100%">
+          <p>
+            Which option you would like to choose for
+            <span id="selectedOption"></span>
+          </p>
+          <select style="
+              width: 100%;
+              box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.3);
+              padding: 15px 5px;
+              border-radius: 10px;
+              outline-width: 0px;
+              border: none;
+            " name="action" id="action">
+            <option value="withdraw">Withdraw</option>
+            <option value="deposite">Deposite</option>
+            <option value="balance">Balance</option>
+          </select>
+        </div>
+        <button
+          class="button"
+          id="options-form-btn"
+          style="
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #2d2d2d;
+            margin: 20px 0;
+            min-width: 200px;
+            border: none;
+            border-radius: 10px;
+            color: rgba(249, 249, 249, 249);
+          "
+        >
+          Continue
+        </button>
+      </div>
+
+      <!-- third step -->
+      <div
+        id="thirdStep"
+        style="
+          box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.3);
+          min-width: 700px;
+          max-width: 100%;
+          padding: 10px 20px;
+          border-radius: 10px;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        "
+      >
+        <div style="width: 100%">
+          <p>ENTER AMOUNT TO <span id="you_want_to_show"></span></p>
+          <input
+            style="
+              width: 100%;
+              box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.3);
+              padding: 15px 5px;
+              border-radius: 10px;
+              outline-width: 0px;
+              border: none;
+            "
+            type="text"
+            maxlength="4"
+            size="4"
+            name=""
+            id="amount"
+            placeholder="Enter amount"
+          />
+          <h3 id="action_result">Your <span id="written_amount"></span> has <span id="action_you_written"></span></h3>
+          <p>Your Available balance is <span id="updated_bal"></span></p>
+        <button
+          class="button"
+          id="complete_form-btn"
+          style="
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #2d2d2d;
+            margin: 20px 0;
+            min-width: 200px;
+            border: none;
+            border-radius: 10px;
+            color: rgba(249, 249, 249, 249);
+          "
+        >
+          finish
+        </button>
+      </div>
+    </div>
+
+    <!-- available balance -->
+    <div
+        id="showBalance"
+        style="
+          box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.3);
+          min-width: 700px;
+          max-width: 100%;
+          padding: 10px 20px;
+          border-radius: 10px;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        "
+      >
+        <div  style="width: 100%">
+          <p>BALANCE</p>
+          <h1>Your Available balance is <span id="this_is_my_bal" style="font-weight: bold;">4000$</span></h1>
+      </div>
+    </div>
+  </body>
+  <script src="./data.js"></script>
+  <script src="./ATM.js"></script>
+</html>
